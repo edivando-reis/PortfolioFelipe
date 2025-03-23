@@ -24,12 +24,13 @@ const Gallery: React.FC<GalleryProps> = ({ loaded }) => {
     {
       id: 1,
       title: 'Modern Bathroom',
-      image: 'public/assets/carousel/Banheiro1.jpg',
+      image: '/public/assets/carousel/Banheiro1.jpg',
+      alt: "Imagem do Public"
     },
     {
       id: 2,
       title: 'Modern Kitchen',
-      image: 'src/assets/carousel/Banheiro2.jpg',
+      image: '/src/assets/carousel/Banheiro2.jpg',
     },
     {
       id: 3,
