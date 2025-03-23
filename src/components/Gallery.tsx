@@ -12,6 +12,8 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { cn } from "@/lib/utils";
 import { useIsMobile } from "@/hooks/use-mobile";
 
+import Banheiro1 from "../assets/carousel/Banheiro1.jpg"
+
 interface GalleryProps {
   loaded: boolean;
 }
@@ -24,7 +26,7 @@ const Gallery: React.FC<GalleryProps> = ({ loaded }) => {
     {
       id: 1,
       title: 'Modern Bathroom',
-      image: '/public/assets/carousel/Banheiro1.jpg',
+      image: "/src/assets/carousel/Banheiro1.jpg",
       alt: "Imagem do Public"
     },
     {
