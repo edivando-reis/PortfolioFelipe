@@ -14,12 +14,12 @@ const Logo: React.FC = () => {
       >
         <span className="font-light">F.R</span>
         <motion.span 
-          className="ml-2 text-xs font-light tracking-widest uppercase opacity-70"
+          className="ml-2 text-[8px] font-light tracking-widest uppercase opacity-70"
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          
+          Fotografia de arquiteturas
         </motion.span>
       </motion.div>
     </Link>
