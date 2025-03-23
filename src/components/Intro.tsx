@@ -51,7 +51,7 @@ const Intro: React.FC<IntroProps> = ({ onComplete }) => {
             animate={{ letterSpacing: "0.05em" }}
             transition={{ duration: 1.5, ease: "easeOut" }}
           >
-            FERNANDO RAMALHO
+            FELIPE RAMALHO
           </motion.h1>
         </motion.div>
 
