@@ -26,7 +26,7 @@ const Gallery: React.FC<GalleryProps> = ({ loaded }) => {
     {
       id: 1,
       title: 'Modern Bathroom',
-      image: "./src/assets/carousel/Banheiro1.jpg",
+      image: "/assets/carousel/Banheiro1.jpg",
       alt: "Imagem do Public"
     },
     {
