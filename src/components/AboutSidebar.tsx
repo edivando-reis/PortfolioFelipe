@@ -62,12 +62,12 @@ const AboutSidebar: React.FC<AboutSidebarProps> = ({ isOpen, onClose }) => {
                   >
                     <div className="flex items-start space-x-6">
                       <img 
-                        src="/assets/carousel/felipe.png" 
+                        src="src/assets/carousel/felipe.png" 
                         alt="Felipe Ramalho" 
-                        className="w-40 md:w-50 lg:w-40 xl:w-80 object-cover"
+                        className="w-40 md:w-50 lg:w-40 xl:w-40 object-cover"
                       />
                       <div className="flex-1">
-                        <p className="mt-4 text-[8px] md:text-[14px] font-light leading-relaxed">
+                        <p className="mt-4 text-[8px] md:text-[10px] lg:text-[12px] font-light leading-relaxed">
                           Bom, me chamo Felipe, mas pode me chamar de Fe. Você pode já ter esbarrado em mim andando de moto, em algum show de rock ou curtindo um café. A paixão pela fotografia se apresentou para mim há quase 20 anos como um hobby que se tornou minha arte aos poucos. Minhas inspirações vêm desde cenários urbanos e mais sombrios até uma cachoeira cheia de vida e banhada pela luz do pôr do sol. Busco autenticidade e verdade tanto nas fotos quanto na vida e me encanto com a simplicidade das coisas e das pessoas. Por que dizer tudo isso? Como umbandista, acredito na potência da ancestralidade e que caminhos se cruzam para somar. Bora seguir essa viagem?
                         </p>
                       </div>
