@@ -12,7 +12,6 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { cn } from "@/lib/utils";
 import { useIsMobile } from "@/hooks/use-mobile";
 
-import Banheiro1 from "../assets/carousel/Banheiro1.jpg"
 
 interface GalleryProps {
   loaded: boolean;
@@ -20,6 +19,7 @@ interface GalleryProps {
 
 const Gallery: React.FC<GalleryProps> = ({ loaded }) => {
   const isMobile = useIsMobile();
+  const carouselRef = useRef<HTMLDivElement>(null);
   
   // Sample architectural photography projects
   const projects = [
@@ -152,20 +152,83 @@ const Gallery: React.FC<GalleryProps> = ({ loaded }) => {
     },
   };
 
+  // For mobile vertical scrolling instead of embla carousel
+  useEffect(() => {
+    if (isMobile && carouselRef.current) {
+      const container = carouselRef.current;
+      
+      // Prevent default touch behavior to avoid page scroll interference
+      const preventDefaultTouch = (e: TouchEvent) => {
+        e.stopPropagation();
+      };
+      
+      container.addEventListener('touchstart', preventDefaultTouch, { passive: false });
+      
+      return () => {
+        container.removeEventListener('touchstart', preventDefaultTouch);
+      };
+    }
+  }, [isMobile]);
+
+  if (isMobile) {
+    return (
+      <motion.section
+        className="py-8 px-4 mt-20 overflow-hidden"
+        initial="hidden"
+        animate={loaded ? "show" : "hidden"}
+        variants={containerVariants}
+      >
+        <div className="max-w-screen-2xl mx-auto">
+          <div 
+            ref={carouselRef}
+            className="overflow-y-auto pb-8 mobile-gallery-container"
+            style={{ height: '75vh', WebkitOverflowScrolling: 'touch' }}
+          >
+            <div className="space-y-4">
+              {projects.map((project) => (
+                <div 
+                  key={project.id} 
+                  className="carousel-card relative overflow-hidden rounded-sm"
+                >
+                  <AspectRatio ratio={4/3} className="bg-muted">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                      draggable="false"
+                    />
+                  </AspectRatio>
+                  <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300">
+                    <h3 className="text-white text-sm font-light tracking-wider">{project.title}</h3>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </motion.section>
+    );
+  }
+
+
   return (
     <motion.section
-      className="py-12 md:py-32 px-6 md:px-12 overflow-hidden"
+      className="py-12 md:py-32 px-6 md:px-12 mt-28 overflow-hidden"
       initial="hidden"
       animate={loaded ? "show" : "hidden"}
       variants={containerVariants}
     >
       <div className="max-w-screen-2xl mx-auto">
+        
         <Carousel
           opts={{
             align: "center",
             loop: false,
-            dragFree: true
+            dragFree: true,
+            containScroll: "trimSnaps",
           }}
+          orientation={isMobile ? "vertical" : "horizontal"}
           className="w-full"
         >
           <CarouselContent className="-ml-4 md:-ml-6">
