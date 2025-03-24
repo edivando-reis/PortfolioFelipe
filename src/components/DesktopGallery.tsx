@@ -16,7 +16,7 @@ const DesktopGallery: React.FC = () => {
       <Carousel
         opts={{
           align: "center",
-          loop: true,
+          loop: false,
           dragFree: true,
           containScroll: "trimSnaps",
         }}
