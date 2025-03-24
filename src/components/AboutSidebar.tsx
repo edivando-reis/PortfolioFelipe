@@ -64,7 +64,7 @@ const AboutSidebar: React.FC<AboutSidebarProps> = ({ isOpen, onClose }) => {
                       <img 
                         src="/assets/carousel/felipe.png" 
                         alt="Felipe Ramalho" 
-                        className="w-40 md:w-50 lg:w-60 xl:w-80 object-cover"
+                        className="w-40 md:w-50 lg:w-40 xl:w-80 object-cover"
                       />
                       <div className="flex-1">
                         <p className="mt-4 text-[8px] md:text-[14px] font-light leading-relaxed">
