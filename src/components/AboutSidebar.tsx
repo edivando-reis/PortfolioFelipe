@@ -62,7 +62,7 @@ const AboutSidebar: React.FC<AboutSidebarProps> = ({ isOpen, onClose }) => {
                   >
                     <div className="flex items-start space-x-6">
                       <img 
-                        src="src/assets/carousel/felipe.png" 
+                        src="/assets/carousel/felipe.png" 
                         alt="Felipe Ramalho" 
                         className="w-40 md:w-50 lg:w-40 xl:w-40 object-cover"
                       />
