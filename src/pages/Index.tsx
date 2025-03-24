@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Gallery from '../components/Gallery';
@@ -35,10 +34,10 @@ const Index = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: introComplete ? 1 : 0 }}
         transition={{ duration: 0.8 }}
-        className="min-h-screen flex flex-col"
+        className="h-screen flex flex-col overflow-hidden"
       >
         <Navbar toggleSidebar={toggleSidebar} />
-        <main className="flex-1">
+        <main className="flex-1 flex items-center justify-center overflow-hidden">
           <Gallery loaded={contentLoaded} />
         </main>
         <Footer />

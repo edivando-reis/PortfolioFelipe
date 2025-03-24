@@ -50,9 +50,13 @@
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground font-sans overflow-x-hidden;
-    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  html, body {
+    @apply bg-background text-foreground font-sans overflow-hidden h-full;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+  }
+
+  #root {
+    @apply h-full overflow-hidden;
   }
 }
 
@@ -170,4 +174,29 @@
 
 .embla__slide:active {
   cursor: grabbing;
+}
+
+.mobile-gallery-grid {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+  scroll-behavior: smooth;
+  touch-action: pan-y;
+  scrollbar-width: thin;
+}
+
+.mobile-gallery-grid::-webkit-scrollbar {
+  width: 4px;
+}
+
+.mobile-gallery-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.mobile-gallery-grid::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.mobile-gallery-grid img {
+  pointer-events: none; /* Prevents image dragging from interfering with scroll */
 }

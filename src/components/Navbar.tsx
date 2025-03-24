@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -11,7 +10,7 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ toggleSidebar }) => {
   return (
     <motion.header 
-      className="fixed top-0 left-0 right-0 z-40 px-6 md:px-12 py-6 flex justify-between items-center bg-white bg-opacity-90 backdrop-blur-sm"
+      className="fixed top-0 left-0 right-0 z-40 px-6 md:px-12 py-4 flex justify-between items-center bg-white bg-opacity-90 backdrop-blur-sm"
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
