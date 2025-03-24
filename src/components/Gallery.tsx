@@ -229,7 +229,7 @@ const Gallery: React.FC<GalleryProps> = ({ loaded }) => {
             containScroll: "trimSnaps",
           }}
           orientation={isMobile ? "vertical" : "horizontal"}
-          className="w-full border "
+          className="w-full"
         >
           <CarouselContent className="-ml-4 md:-ml-6">
             {projects.map((project, index) => (
