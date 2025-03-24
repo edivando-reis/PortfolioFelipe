@@ -173,7 +173,7 @@ const Gallery: React.FC<GalleryProps> = ({ loaded }) => {
   if (isMobile) {
     return (
       <motion.section
-        className="py-0 px-4 mt-20 overflow-hidden border border-red-500"
+        className="py-0 px-4 mt-20 overflow-hidden"
         initial="hidden"
         animate={loaded ? "show" : "hidden"}
         variants={containerVariants}
@@ -214,7 +214,7 @@ const Gallery: React.FC<GalleryProps> = ({ loaded }) => {
 
   return (
     <motion.section
-      className="py-12 md:py-10 px-6 md:px-12 mt-28 md:mt-[260px] lg:mt-[80px] xl:mt-[160px] overflow-hidden border border-red-500"
+      className="py-12 md:py-10 px-6 md:px-12 mt-28 md:mt-[260px] lg:mt-[80px] xl:mt-[160px] overflow-hidden "
       initial="hidden"
       animate={loaded ? "show" : "hidden"}
       variants={containerVariants}
@@ -229,7 +229,7 @@ const Gallery: React.FC<GalleryProps> = ({ loaded }) => {
             containScroll: "trimSnaps",
           }}
           orientation={isMobile ? "vertical" : "horizontal"}
-          className="w-full border border-blue-600"
+          className="w-full border "
         >
           <CarouselContent className="-ml-4 md:-ml-6">
             {projects.map((project, index) => (
