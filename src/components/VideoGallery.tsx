@@ -4,10 +4,9 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const videoData = [
-  { id: '1', videoId: 'VsufR8DOKmQ?si=oSLEfXCCJG9hdU11', title: 'Shogun Sessions - Sustance', description: 'A big set of sustance, deep and dark Drum n bass  ' },
-  { id: '2', videoId: 'uD4izuDMUQA', title: 'TIMELAPSE OF THE FUTURE', description: 'A journey through cosmic evolution'},
-  { id: '3', videoId: '9bZkp7q19f0', title: 'Ativar o Windows', description: 'Lorem Ipsum' },
-  { id: '4', videoId: 'BiP0FpY88E4?si=85qt39IPQ6U_O9mw', title: 'Electric Callboy - ELEVATOR OPERATOR', description: 'You heard about a man The lift controller' }
+  { id: '1', videoId: 'fFMaJj0fUwY?si=leT3sAhwgehGNoZX', title: 'Video imobiliario', description: 'W São Paulo residences' },
+  { id: '2', videoId: 'XmovAhMHhs0?si=yymVk67S8B6V6NPq', title: 'Video imobiliario', description: 'Fazenda Boa Vista'},
+
 ];
 
 interface VideoGalleryProps {
