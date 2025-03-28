@@ -125,3 +125,10 @@ export interface GalleryProps {
       image: '/assets/carousel/VarandaGourmet.jpg',
     },
   ];
+
+  
+  export type GalleryMode = 'photos' | 'videos';
+
+  export interface GalleryProps {
+    loaded: boolean;
+  }

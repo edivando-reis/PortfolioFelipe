@@ -5,11 +5,13 @@ import Footer from '../components/Footer';
 import Intro from '../components/Intro';
 import AboutSidebar from '../components/AboutSidebar';
 import { motion, AnimatePresence } from 'framer-motion';
+import { GalleryMode } from '../types';
 
 const Index = () => {
   const [introComplete, setIntroComplete] = useState(false);
   const [contentLoaded, setContentLoaded] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [galleryMode, setGalleryMode] = useState<GalleryMode>('photos');
 
   useEffect(() => {
     if (introComplete) {
@@ -20,6 +22,10 @@ const Index = () => {
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
+  };
+
+  const handleGalleryModeChange = (mode: GalleryMode) => {
+    setGalleryMode(mode);
   };
 
   return (
@@ -36,9 +42,13 @@ const Index = () => {
         transition={{ duration: 0.8 }}
         className="h-screen flex flex-col overflow-hidden"
       >
-        <Navbar toggleSidebar={toggleSidebar} />
+        <Navbar 
+          toggleSidebar={toggleSidebar} 
+          onGalleryModeChange={handleGalleryModeChange}
+          currentGalleryMode={galleryMode}
+        />
         <main className="flex-1 flex items-center justify-center overflow-hidden">
-          <Gallery loaded={contentLoaded} />
+          <Gallery loaded={contentLoaded} mode={galleryMode} />
         </main>
         <Footer />
       </motion.div>

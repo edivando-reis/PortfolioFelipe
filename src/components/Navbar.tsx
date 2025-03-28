@@ -1,34 +1,64 @@
+
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import Logo from './Logo';
+import { Button } from "@/components/ui/button";
+import { Info, Menu, Wallet, Youtube } from "lucide-react";
+import { cn } from "@/lib/utils";
+import Logo from "./Logo";
+import { GalleryMode } from '../types';
 
 interface NavbarProps {
   toggleSidebar: () => void;
+  onGalleryModeChange: (mode: GalleryMode) => void;
+  currentGalleryMode: GalleryMode;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ toggleSidebar }) => {
+const Navbar: React.FC<NavbarProps> = ({ 
+  toggleSidebar, 
+  onGalleryModeChange,
+  currentGalleryMode 
+}) => {
   return (
-    <motion.header 
-      className="fixed top-0 left-0 right-0 z-40 px-6 md:px-12 py-4 flex justify-between items-center bg-white bg-opacity-90 backdrop-blur-sm"
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+    <motion.header
+      className="py-4 px-6 md:px-12 flex justify-between items-center"
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
     >
       <Logo />
       
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-      >
-        <button 
-          onClick={toggleSidebar} 
-          className="text-sm uppercase tracking-widest font-light hover:opacity-70 transition-opacity duration-300"
+      <div className="flex items-center gap-2 md:gap-4">
+        <Button
+          variant="ghost"
+          size="sm"
+          className={cn(
+            "rounded-full",
+            currentGalleryMode === 'photos' && "text-primary"
+          )}
+          onClick={() => onGalleryModeChange('photos')}
         >
-          Sobre
-        </button>
-      </motion.div>
+          Photos
+        </Button>
+        <Button
+          variant="ghost"
+          size="sm"
+          className={cn(
+            "rounded-full flex items-center gap-1",
+            currentGalleryMode === 'videos' && "text-primary"
+          )}
+          onClick={() => onGalleryModeChange('videos')}
+        >
+          <Youtube className="h-4 w-4" /> Videos
+        </Button>
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={toggleSidebar}
+          aria-label="About"
+        >
+          <Info className="h-5 w-5" />
+        </Button>
+      </div>
     </motion.header>
   );
 };
