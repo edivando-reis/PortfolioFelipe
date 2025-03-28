@@ -64,10 +64,10 @@ const AboutSidebar: React.FC<AboutSidebarProps> = ({ isOpen, onClose }) => {
                       <img 
                         src="/assets/carousel/felipe.png" 
                         alt="Felipe Ramalho" 
-                        className="w-80 object-cover"
+                        className="w-40 md:w-50 lg:w-40 xl:w-40 object-cover"
                       />
                       <div className="flex-1">
-                        <p className="mt-4 text-base md:text-[14px] font-light leading-relaxed">
+                        <p className="mt-4 text-[8px] md:text-[10px] lg:text-[12px] font-light leading-relaxed">
                           Bom, me chamo Felipe, mas pode me chamar de Fe. Você pode já ter esbarrado em mim andando de moto, em algum show de rock ou curtindo um café. A paixão pela fotografia se apresentou para mim há quase 20 anos como um hobby que se tornou minha arte aos poucos. Minhas inspirações vêm desde cenários urbanos e mais sombrios até uma cachoeira cheia de vida e banhada pela luz do pôr do sol. Busco autenticidade e verdade tanto nas fotos quanto na vida e me encanto com a simplicidade das coisas e das pessoas. Por que dizer tudo isso? Como umbandista, acredito na potência da ancestralidade e que caminhos se cruzam para somar. Bora seguir essa viagem?
                         </p>
                       </div>
@@ -80,19 +80,19 @@ const AboutSidebar: React.FC<AboutSidebarProps> = ({ isOpen, onClose }) => {
                     transition={{ delay: 0.3, duration: 0.5 }}
                     className="mt-12"
                   >
-                    <h2 className="text-2xl font-light mb-6">Contato</h2>
+                    <h2 className="text-[18px] md:text-[24px] font-light mb-4">Contato</h2>
                     <div className="space-y-4">
                       <p className="flex items-center">
                         <Mail size={18} className="mr-3 opacity-70" />
-                        <span>contatoferamalho@gmail.com</span>
+                        <span className='text-[12px]'>contatoferamalho@gmail.com</span>
                       </p>
                       <p className="flex items-center">
                         <Phone size={18} className="mr-3 opacity-70" />
-                        <span>(11)-95961-7887</span>
+                        <span className='text-[12px]'>(11)-95961-7887</span>
                       </p>
                       <p className="flex items-center">
                         <Instagram size={18} className="mr-3 opacity-70" />
-                        <span>fe.ramalhofotografia</span>
+                        <span className='text-[12px]'>fe.ramalhofotografia</span>
                       </p>
                     </div>
                   </motion.div>
